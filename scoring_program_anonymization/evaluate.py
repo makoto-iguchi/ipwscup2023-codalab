@@ -26,7 +26,7 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
     data_id_file = os.path.join(submission_dir, "data_id.txt")
     data_id = open(data_id_file).read()
 
-    orig_file = os.path.join(orig_dir, "orig_data_final_"+str(data_id)+".csv")
+    orig_file = os.path.join(orig_dir, "orig_data_"+str(data_id)+".csv")
 
     submission_file = os.path.join(submission_dir, "anonymized.csv")
 
@@ -34,7 +34,7 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
     submission_df = pd.read_csv(submission_file, header=None)
     
     checkC(orig_df, submission_df)
-
+    
     df = umark2.umark(orig_df, submission_df)
     cnt, rate, coef, OR, pvalue, cor, iloss_age, iloss_bmi, iloss_cat, max, utility = df.loc["max"]
 
@@ -45,5 +45,5 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
     output_file.write("il_age:%.4f\n" % iloss_age)
     output_file.write("il_bmi:%.4f\n" % iloss_bmi)
     output_file.write("il_cat:%.4f\n" % iloss_cat)
-    output_file.close()   
+    output_file.close()
     

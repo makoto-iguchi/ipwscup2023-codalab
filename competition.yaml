@@ -23,7 +23,7 @@ phases:
         max_submissions: 1000
         max_submissions_per_day: 100
         is_scoring_only: True
-        scoring_program: scoring_program_anonymization_pre.zip
+        scoring_program: scoring_program_anonymization.zip
         reference_data: reference_data_anonymization_pre.zip
         phase_never_ends: False
     2:
@@ -35,7 +35,7 @@ phases:
         max_submissions: 0
         max_submissions_per_day: 0
         is_scoring_only: True
-        scoring_program: scoring_program_anonymization_pre.zip #dummy
+        scoring_program: scoring_program_anonymization.zip #dummy
         reference_data: reference_data_anonymization_pre.zip #dummy
         phase_never_ends: False
     3:
@@ -47,7 +47,7 @@ phases:
         max_submissions: 10
         max_submissions_per_day: 10
         is_scoring_only: True
-        scoring_program: scoring_program_attack_pre.zip
+        scoring_program: scoring_program_attack.zip
         reference_data: reference_data_attack_pre.zip
         phase_never_ends: False
     4:
@@ -59,7 +59,7 @@ phases:
         max_submissions: 0
         max_submissions_per_day: 0
         is_scoring_only: True
-        scoring_program: scoring_program_anonymization_pre.zip #dummy
+        scoring_program: scoring_program_anonymizatio.zip #dummy
         reference_data: reference_data_anonymization_pre.zip #dummy
         phase_never_ends: False
     5:
@@ -71,7 +71,7 @@ phases:
         max_submissions: 1000
         max_submissions_per_day: 100
         is_scoring_only: True
-        scoring_program: scoring_program_anonymization_final.zip
+        scoring_program: scoring_program_anonymization.zip
         reference_data: reference_data_anonymization_final.zip
         phase_never_ends: False
     6:
@@ -83,7 +83,7 @@ phases:
         max_submissions: 0
         max_submissions_per_day: 0
         is_scoring_only: True
-        scoring_program: scoring_program_anonymization_pre.zip #dummy
+        scoring_program: scoring_program_anonymization.zip #dummy
         reference_data: reference_data_anonymization_pre.zip #dummy
         phase_never_ends: False
     7:
@@ -95,7 +95,7 @@ phases:
         max_submissions: 10
         max_submissions_per_day: 10
         is_scoring_only: True
-        scoring_program: scoring_program_attack_final.zip
+        scoring_program: scoring_program_attack.zip
         reference_data: reference_data_attack_final.zip
         phase_never_ends: False
 
