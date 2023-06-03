@@ -1,0 +1,234 @@
+title: iPWS Cup 2023 
+description: Data Anonymization Competition
+image: healthcare.jpg
+has_registration: True
+end_date: 2023-08-21
+html:
+    overview: overview.html
+    evaluation: evaluation.html
+    terms: terms_and_conditions.html
+    data: data.html
+    Instruction: instruction.html
+    Teams: teams.html
+
+competition_docker_image: igucci1974/codalab:ipws01
+
+phases:
+    1:
+        phasenumber: 1
+        label: "Preliminary - Anonymization"
+        description: "Preliminary round: Anonymize your team data!"
+        color: green
+        start_date: 2023-06-05
+        max_submissions: 1000
+        max_submissions_per_day: 100
+        is_scoring_only: True
+        scoring_program: scoring_program_anonymization_pre.zip
+        reference_data: reference_data_anonymization_pre.zip
+        phase_never_ends: False
+    2:
+        phasenumber: 2
+        label: "Break"
+        description: "Break: The organizer is preparing for the next phase."
+        color: white
+        start_date: 2023-06-20
+        max_submissions: 0
+        max_submissions_per_day: 0
+        is_scoring_only: True
+        scoring_program: scoring_program_anonymization_pre.zip #dummy
+        reference_data: reference_data_anonymization_pre.zip #dummy
+        phase_never_ends: False
+    3:
+        phasenumber: 3
+        label: "Preliminary - Attack"
+        description: "Preliminary round: Attack other teams' anonymized data!"
+        color: yellow
+        start_date: 2023-06-26
+        max_submissions: 10
+        max_submissions_per_day: 10
+        is_scoring_only: True
+        scoring_program: scoring_program_attack_pre.zip
+        reference_data: reference_data_attack_pre.zip
+        phase_never_ends: False
+    4:
+        phasenumber: 4
+        label: "Break"
+        description: "Break: The organizer is preparing for the next phase."
+        color: white
+        start_date: 2023-07-11
+        max_submissions: 0
+        max_submissions_per_day: 0
+        is_scoring_only: True
+        scoring_program: scoring_program_anonymization_pre.zip #dummy
+        reference_data: reference_data_anonymization_pre.zip #dummy
+        phase_never_ends: False
+    5:
+        phasenumber: 5
+        label: "Final - Anonymization"
+        description: "Final round: Anonymize your team data!"
+        color: blue
+        start_date: 2023-07-24
+        max_submissions: 1000
+        max_submissions_per_day: 100
+        is_scoring_only: True
+        scoring_program: scoring_program_anonymization_final.zip
+        reference_data: reference_data_anonymization_final.zip
+        phase_never_ends: False
+    6:
+        phasenumber: 6
+        label: "Break"
+        description: "Break: The organizer is preparing for the next phase."
+        color: white
+        start_date: 2023-08-08
+        max_submissions: 0
+        max_submissions_per_day: 0
+        is_scoring_only: True
+        scoring_program: scoring_program_anonymization_pre.zip #dummy
+        reference_data: reference_data_anonymization_pre.zip #dummy
+        phase_never_ends: False
+    7:
+        phasenumber: 7
+        label: "Final - Attack"
+        description: "Final round: Attack other teams' anonymized data!"
+        color: orange
+        start_date: 2023-08-14
+        max_submissions: 10
+        max_submissions_per_day: 10
+        is_scoring_only: True
+        scoring_program: scoring_program_attack_final.zip
+        reference_data: reference_data_attack_final.zip
+        phase_never_ends: False
+
+leaderboard:
+    leaderboards:
+        Anonymous_phase_result: &ANON_RESULTS
+            label: Anonymization Phase Result
+            rank: 1
+        Attack_phase_result: &ATK_RESULTS
+            label: Attack Phase Result
+            rank: 2
+    column_groups:
+        Attack_scores: &ATK_SCORE
+            label: Attack Score
+        PRIVACY_SCORES: &PRIVACY_SCORES
+            label: Privacy Scores after the attack
+    columns:
+        utility_score:
+            leaderboard: *ANON_RESULTS
+            label: Utility Score
+            numeric_format: 4
+            rank: 1
+            sort: desc
+        rate:
+            leaderboard: *ANON_RESULTS
+            label: rate
+            numeric_format: 4
+            rank: 2
+            sort: asc
+        cor:
+            leaderboard: *ANON_RESULTS
+            label: cor
+            numeric_format: 4
+            rank: 3
+            sort: asc
+        OR:
+            leaderboard: *ANON_RESULTS
+            label: OR
+            numeric_format: 4
+            rank: 4
+            sort: asc
+        il_age:
+            leaderboard: *ANON_RESULTS
+            label: il-age
+            numeric_format: 4
+            rank: 5
+            sort: asc
+        il_bmi:
+            leaderboard: *ANON_RESULTS
+            label: il-bmi
+            numeric_format: 4
+            rank: 6
+            sort: asc
+        il_cat:
+            leaderboard: *ANON_RESULTS
+            label: il-cat
+            numeric_format: 4
+            rank: 7
+            sort: asc
+
+        attack_score:
+            leaderboard: *ATK_RESULTS
+            column_group: *ATK_SCORE
+            label: Attack Score
+            numeric_format: 4
+            rank: 1
+        privacy_score_1:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 1
+            numeric_format: 4
+            rank: 2
+            sort: asc
+        privacy_score_2:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 2
+            numeric_format: 4
+            rank: 3
+            sort: asc
+        privacy_score_3:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 3
+            numeric_format: 4
+            rank: 4
+            sort: asc
+        privacy_score_4:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 4
+            numeric_format: 4
+            rank: 5
+            sort: asc
+        privacy_score_5:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 5
+            numeric_format: 4
+            rank: 6
+            sort: asc
+        privacy_score_6:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 6
+            numeric_format: 4
+            rank: 7
+            sort: asc
+        privacy_score_7:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 7
+            numeric_format: 4
+            rank: 8
+            sort: asc
+        privacy_score_8:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 8
+            numeric_format: 4
+            rank: 9
+            sort: asc
+        privacy_score_9:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 9
+            numeric_format: 4
+            rank: 10
+            sort: asc
+        privacy_score_10:
+            leaderboard: *ATK_RESULTS
+            column_group: *PRIVACY_SCORES
+            label: Team 10
+            numeric_format: 4
+            rank: 11
+            sort: asc

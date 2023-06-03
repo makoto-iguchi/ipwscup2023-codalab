@@ -1,0 +1,125 @@
+<H1>Evaluation</H1>
+
+<H2>Data set</H2>
+<p>
+    The health data used in this competition is the synthetic data generated based on the survey data provided by the <a href="http://www.cdc.gov/nchs/nhanes.htm">National Health and Nutrition Examination Survey (NHANES)</a>. More specifically, we use the <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017">NHANES 2017-2018 dataset</a>.
+</p>
+<p>
+    Here is an example of the health data.
+</p>
+<table border="1" style="border-collapse: collapse" width="80%" cellpadding="3">
+    <tr bgcolor="#cccccc">
+        <th>gen</th>
+        <th>age</th>
+        <th>race</th>
+        <th>edu</th>
+        <th>mar</th>
+        <th>bmi</th>
+        <th>dep</th>
+        <th>pir</th>
+        <th>gh</th>
+        <th>qm</th>
+        <th>mets</th>
+        <th>dia</th>
+    </tr>
+    <tr>
+        <td>Female</td>
+        <td>62</td>
+        <td>White</td>
+        <td>11th</td>
+        <td>Married</td>
+        <td>20.8</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>Q2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Female</td>
+        <td>71</td>
+        <td>Mexican</td>
+        <td>9th</td>
+        <td>Divorced</td>
+        <td>32.1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>Q1</td>
+        <td>0</td>
+    </tr>       
+    <tr>
+        <td>Male</td>
+        <td>48</td>
+        <td>White</td>
+        <td>College</td>
+        <td>Married</td>
+        <td>21.2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>Q4</td>
+        <td>0</td>
+    </tr>       
+</table>
+<br>
+<p>
+    A brief explanation of each attribute is as follows:
+</p>
+<p>
+<ul>
+    <li><b>gen:</b> Gender (Female, Male)</li>
+    <li><b>age:</b> Age (20-80)</li>
+    <li><b>race:</b> Race (Black, Hispanic, Mexican, White, Other)</li>
+    <li><b>edu:</b> Education level (9th, 11th, HighSchool, College, Graduate)</li>
+    <li><b>mar:</b> Marital status (Married, Widowed, Divorced, Separated, Never, Partner)</li>
+    <li><b>bmi:</b> Body mass index (14.2-45.3)</li>
+    <li><b>dep:</b> In depression? (0: no, 1: yes)</li>
+    <li><b>pir:</b> In poverty? (0: no, 1:yes)</li>
+    <li><b>gh:</b> NOT USED IN THIS COMPETITION (Always 0)</li>
+    <li><b>qm:</b> NOT USED IN THIS COMPETITION (Always 0)</li>
+    <li><b>mets:</b> Quartiles of Met value (Q1, Q2, Q3, Q4)</li>
+    <li><b>dia:</b> Is diabetes? (1: yes, 0: no)</li>
+</ul>
+</p>
+<p>
+    In the contest scenario, we assume that this health data is used to analyze diabetes prevalence. In other words, the variable "dia" is treated as the objective variable. All other variables are explanatory variables.
+</p>
+
+<H2>Scores</H2>
+<H3>Evaluation of the anonymized health data</H3>
+<p>
+    We will evaluate the submitted anonymized health data with the following two scores:
+    <ul>
+        <li><b>Utility score (U):</b> How much the utility of the data is retained after the anonymization</li>
+        <ul>
+            <li>The score ranges from 1 (best) to 0 (worst), where 1 means the anonymized data has exactly the same utility as that of the original health data (i.e. no utility loss).</li>
+            <li>The score is calculated in the anonymization phase by comparing the submitted anonymized health data with the original health data.</li>
+        </ul>
+        <li><b>Privacy score (P):</b> How much the privacy of data is protected against re-identification attacks by other teams.</li>
+        <ul>
+            <li>The score ranges from 1 (best) to 0 (worst), where 1 means none of the records in the anonymized data is re-identified by any team and 0 means at least one team has successfully re-identified all records in the anonymized data.</li>
+            <li>The score is calculated in the attack phase; the best attack against the anonymized data will be used for calculating the privacy score for this data.</ul>
+        </ul>
+    </ul>
+</p>
+<p>
+    We will award the teams who submit the anonymized health data with a well-balanced utility and privacy score. The final score of the anonymized health data is the harmonic mean of its utility score and the privacy score, and it will be calculated as <b>2 / ( U<sup>-1</sup> + P<sup>-1</sup> )</b>.
+</p>
+<p>
+    For more details on the scores (e.g. python scripts used for calculating the scores), check <a href="https://github.com/kikn88/ipwscup2023">iPWS CUp 2023 GitHub repository</a>.
+</p>
+
+<H3>Evaluation of attack</H3>
+
+<p>We will evaluate the effectiveness of the attacks submitted in the attack phase with the following score:</p>
+<ul>
+    <li><b>Attack score (A):</b> How well the attack re-identifies other teams' anonymized health data.</li>
+    <ul>
+        <li>The score ranges from 1 (best) to 0 (worst), where 1 means the attack fully re-identified all records of all other teams' anonymized data.</li>
+    </ul>
+</ul>
+The attack score is calculated as <b>1 - Average (P of other teams' anonymized data after the attack)</b>.

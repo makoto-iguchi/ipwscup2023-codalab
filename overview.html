@@ -1,0 +1,101 @@
+<H1>iPWS Cup 2023: Diabetes Challenge</H1>
+
+<H2>What's New</H2>
+<ul>
+	<li><b>2023/06/12</b> Started the Preliminary Round (Anonymization Phase)</li>
+	<li><b>2023/06/10</b> Opened this competition page</li>
+</ul>
+
+<H2>Schedule</H2>
+<ul>
+	<li><b>Preliminary Round</b></li>
+	<ul>
+		<li><b>2023/06/12 - 2023/06/21</b> Preliminary Round: Anonymization Phase</li>
+		<li><b>2023/06/28 - 2023/07/07</b> Preliminary Round: Attack Phase</li>
+	</ul>
+	<li><b>Final Round</b></li>
+	<ul>
+		<li><b>2023/07/17 - 2023/07/31</b> Final Round: Anonymization Phase</li>
+		<li><b>2023/08/07 - 2023/08/21</b> Final Round: Attack Phase</li>
+	</ul>
+	<li><b>Presentation @ IWSEC2023</b></li>
+	<ul>
+		<li><b>2023/08/28 or 29</b> Final presentation session in IWSEC 2023 @ Yokohama, Japan</li>
+	</ul>
+</ul>
+
+
+<H2>Overview</H2>
+<p>
+	Health data holds immense potential for discovering new treatments, improving patient care, and enhancing healthcare outcomes. By sharing and analyzing large-scale health datasets, researchers and medical professionals can gain valuable insights into diseases, risk factors, treatment effectiveness, and epidemiological patterns. However, the sensitive nature of health data demands a careful balance between data privacy and data utility.
+</p>
+<p>
+	Anonymization plays a crucial role in striking this balance. It involves the removal, modification, or aggregation of identifiable information from health records to prevent re-identification of individuals. By re-identifying the data, it becomes more difficult for malicious actors to associate sensitive information with specific individuals, thereby protecting privacy.
+
+</p>
+<p>
+	However, excessive anonymization can lead to a loss of data utility, rendering the anonymized dataset less valuable for meaningful analysis. If important features are removed or altered to the extent that the data becomes uninformative or non-representative, the potential insights and benefits derived from the data are compromised.
+</p>
+<p>
+	Therefore, achieving the twin goals of data privacy and data utility poses a significant challenge. The iPWS Cup 2023 seeks to encourage participants to develop innovative anonymization techniques that strike an optimal balance between protecting data privacy and preserving data utility.
+</p>
+
+<H2>Rules</H2>
+<H4>Phases</H4>
+<img src="https://lh3.googleusercontent.com/d/1VbkWao_i70_QdaunyDUA35NUQRPORiwJ">
+<p>
+	The competition is mainly structured in two phases (the anonymization phase and the attack phase) as shown in the figure above.
+</p>
+<ul>
+	<li><b>Anonymization Phase</b>: Defend your team data</li>
+	<ol>
+		<li>Each team receives different original health data (B<sup>(i)</sup>).</li>
+		<li>The team anonymizes their health data in order to prevent the re-identification of individuals while trying not to harm the data utility too much.</li>
+		<li>The team submits their anonymized health data (C<sup>(i)</sup>) to the competition organizer.</li>
+		<li>The organizer evaluates the <b>utility score</b> of the data by comparing C<sup>(i)</sup> with B<sup>(i)</sup>; the more the team alters the data, the more the data utility is lost.</li>
+	</ol>			
+	<li><b>Attack Phase</b>: Attack other teams' data</li>
+	<ol>
+		<li>Each team receives the following set of data:</li>
+		<ul>
+			<li>The original health data of other teams (B<sup>(i)</sup>)</li>
+			<li>The sample of anonymized data submitted by other teams (D<sup>(i)</sup>)</li>
+		</ul>
+		<li>The team re-identifies D<sup>(i)</sup> by guessing which rows in D<sup>(i)</sup> correspond to which rows in B<sup>(i)</sup>.</li>
+		<li>The team submits their guessing as the estimated index (E<sup>(i)</sup>).</li>
+		<li>The organizer evaluates the <b>privacy score</b>, the ratio of rows in D<sup>(i)</sup> that are not re-identified, by comparing E<sup>(i)</sup> with the correct index X<sup>(i)</sup>; the more the anonymized data is re-identified, the less its privacy score becomes.</li>
+	</ol>
+</ul>
+<p>
+	Please check <a href="https://github.com/kikn88/ipwscup2023">iPWS CUp 2023 GitHub repository</a> for the rule details.<br>
+</p>
+<H4>Rounds</H4>
+<p>
+	There are two rounds in the competition: the <b>preliminary round</b> and the <b>final round</b>. 
+</p>
+<ul>
+	<li>Each round has anonymization and attack phases.</li>
+	<li>A preliminary round is a practice round. It is mainly held to help participants understand the competition rules and to develop team strategies for the final round.</li>
+	<li>Note that the competition organizer may use the result of the preliminary round to tweak the competition rules for the final rounds (e.g. fine-tuning parameters).</li>
+</ul>
+
+<H4>Winners</H4>
+<p>
+	The teams who submit the anonymized health data with the well-balanced utility loss score and the risk score will win the <b>anonymization award</b>. The results of the both preliminary and final rounds will be used, while putting more weight on the final round result over the preliminary round result, to determine the <b>first, second, and third place winners</b>.
+</p>
+<p>
+	The team who submits the best re-identification attacks onto other teams' anonymized health data will win the <b>attack award</b>. The results of the both preliminary and final rounds will be used while putting more weight on the final round result over the preliminary round result.
+</p>
+<H4>Final presentation session</H4>
+<p>
+	This competition is held as a part of the 18th International Workshop on Security (<a href="https://www.iwsec.org/2023/index.html">IWSEC 2023</a>). At least one person from each team is asked to attend the final presentation session in the IWSEC 2023. We will ask the competition winners to make their final presentation explaining how the teams fought the competition (i.e. presenting their anonymization and de-anonymization strategies and techniques).
+</p>
+
+<H2>Contact</H2>
+<p>
+	If you have any questions, please feel free to post your question on the forums. You can reach the forums by clicking the 'Forums' tab on this site. 
+</p>
+<p>
+	You can also contact us by sending an email to iPWS Cup Committee: secretary-ipwscup2023(at)iwsec.org (replace (at) with @).
+</p>
+
