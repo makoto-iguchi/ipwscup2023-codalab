@@ -28,7 +28,7 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
         if i == my_team_id:
             continue # Preventing suicide attack
             
-        estimate_file = os.path.join(submission_dir, "estimate_team%02d.csv" % i)
+        estimate_file = os.path.join(submission_dir, "estimated_team%02d.csv" % i)
         answer_file = os.path.join(orig_dir, "correct_team%02d.csv" % i)
 
         dfX = pd.read_csv(answer_file, header=None)
