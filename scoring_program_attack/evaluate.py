@@ -23,7 +23,8 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
         os.makedirs(output_dir)
 
     score = [1.0] * (num_of_team + 1) # Note: Team ID starts with 1
-    
+    score[0] = 0
+
     for i in range(1, num_of_team + 1):
         if i == my_team_id:
             continue # Preventing suicide attack
