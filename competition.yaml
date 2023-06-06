@@ -19,7 +19,7 @@ phases:
         label: "Preliminary - Anonymization"
         description: "Preliminary round: Anonymize your team data!"
         color: green
-        start_date: 2023-06-05
+        start_date: 2023-06-12
         max_submissions: 1000
         max_submissions_per_day: 100
         is_scoring_only: True
@@ -31,7 +31,7 @@ phases:
         label: "Break"
         description: "Break: The organizer is preparing for the next phase."
         color: white
-        start_date: 2023-06-20
+        start_date: 2023-06-22
         max_submissions: 0
         max_submissions_per_day: 0
         is_scoring_only: True
@@ -43,7 +43,7 @@ phases:
         label: "Preliminary - Attack"
         description: "Preliminary round: Attack other teams' anonymized data!"
         color: yellow
-        start_date: 2023-06-26
+        start_date: 2023-06-28
         max_submissions: 10
         max_submissions_per_day: 10
         is_scoring_only: True
@@ -55,7 +55,7 @@ phases:
         label: "Break"
         description: "Break: The organizer is preparing for the next phase."
         color: white
-        start_date: 2023-07-11
+        start_date: 2023-07-08
         max_submissions: 0
         max_submissions_per_day: 0
         is_scoring_only: True
@@ -67,7 +67,7 @@ phases:
         label: "Final - Anonymization"
         description: "Final round: Anonymize your team data!"
         color: blue
-        start_date: 2023-07-24
+        start_date: 2023-07-17
         max_submissions: 1000
         max_submissions_per_day: 100
         is_scoring_only: True
@@ -79,7 +79,7 @@ phases:
         label: "Break"
         description: "Break: The organizer is preparing for the next phase."
         color: white
-        start_date: 2023-08-08
+        start_date: 2023-08-01
         max_submissions: 0
         max_submissions_per_day: 0
         is_scoring_only: True
@@ -91,7 +91,7 @@ phases:
         label: "Final - Attack"
         description: "Final round: Attack other teams' anonymized data!"
         color: orange
-        start_date: 2023-08-14
+        start_date: 2023-08-07
         max_submissions: 10
         max_submissions_per_day: 10
         is_scoring_only: True
