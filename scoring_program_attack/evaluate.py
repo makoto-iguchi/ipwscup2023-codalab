@@ -10,7 +10,7 @@ output_dir = sys.argv[2]
 submission_dir = os.path.join(input_dir, 'res')
 orig_dir = os.path.join(input_dir, 'ref')
 
-num_of_team = 9
+num_of_team = 10
 
 with open(os.path.join(submission_dir, "my_team_id.txt")) as my_team:
     my_team_id = int(my_team.read())
