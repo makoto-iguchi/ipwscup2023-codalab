@@ -3,6 +3,7 @@ import sys
 import os.path
 from lmark2 import lmark
 import pandas as pd
+from checkE import checkE
 
 input_dir = sys.argv[1]
 output_dir = sys.argv[2]
@@ -29,11 +30,12 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
             continue
             
         estimate_file = os.path.join(submission_dir, "estimated_team%02d.csv" % i)
-        answer_file = os.path.join(orig_dir, "correct_team%02d_pre.csv" % i)
+        answer_file = os.path.join(orig_dir, "correct_team%02d.csv" % i)
 
         dfX = pd.read_csv(answer_file, header=None)
         if os.path.exists(estimate_file):
             dfE = pd.read_csv(estimate_file, header=None)
+            checkE(dfE) # Format & value check
             score[i] = lmark(dfE, dfX)
         else:
             score[i] = 1.0 # No Estimate index submitted. Privacy score will be 1.0
