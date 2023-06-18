@@ -4,6 +4,7 @@ import os.path
 from lmark2 import lmark
 import pandas as pd
 from checkE import checkE
+import glob
 
 input_dir = sys.argv[1]
 output_dir = sys.argv[2]
@@ -24,6 +25,12 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
         os.makedirs(output_dir)
 
     score = [0] * (num_of_team + 1) # Note: Team ID starts with 1
+
+    # If there is no estimated_team??.csv file, reject the submission
+    if len(glob.glob(os.path.join(submission_dir, "estimated_team??.csv"))) == 0:
+        message = "Error: you must submit at least one estimated index file."
+        print(message)
+        raise Exception(message)
     
     for i in range(1, num_of_team + 1):
         if i == my_team_id:
@@ -35,6 +42,7 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
         dfX = pd.read_csv(answer_file, header=None)
         if os.path.exists(estimate_file):
             dfE = pd.read_csv(estimate_file, header=None)
+            print("estimated_team%d.csv" % i)
             checkE(dfE) # Format & value check
             score[i] = lmark(dfE, dfX)
         else:
@@ -42,7 +50,7 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
 
     output_filename = os.path.join(output_dir, 'scores.txt')
     with open(output_filename, mode="w") as f:        
-        f.writelines("attack_score:%.4f\n" % (1 - (sum(score)) / (num_of_team - 1)))
+        f.writelines("attack_score:%.4f\n" % (1 - sum(score) / (num_of_team - 1)))
         for i in range(1, num_of_team + 1):
             if i == my_team_id:
                 continue # Preventing suicideal attack
