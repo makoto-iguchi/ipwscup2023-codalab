@@ -24,7 +24,7 @@ if os.path.isdir(submission_dir) and os.path.isdir(orig_dir):
     output_file = open(output_filename, 'w')
 
     data_id_file = os.path.join(submission_dir, "data_id.txt")
-    data_id = open(data_id_file).read()
+    data_id = open(data_id_file).read().strip()
 
     orig_file = os.path.join(orig_dir, "orig_data_"+str(data_id)+".csv")
 
