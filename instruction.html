@@ -1,28 +1,62 @@
-<H1>Instruction</H1>
+<H1>Instruction + FAQ</H1>
 <H2>Manuals</H2>
 <p>
-    Please check the <a href="https://docs.google.com/document/d/1eF8P3X60fmc0yuC14ixtLq81ORSkIe5HCy3T9I25Ha8/edit#">iPWS Cup 2023 competition manual</a> for details on how to use this competition site.  
+    Please check the <a
+        href="https://docs.google.com/document/d/1eF8P3X60fmc0yuC14ixtLq81ORSkIe5HCy3T9I25Ha8/edit#">iPWS Cup 2023
+        competition manual</a> for details on how to use this competition site.
 </p>
+    There are some useful scripts, such as sample anonymization and attack scripts and data format validator, available in <a href="https://github.com/kikn88/ipwscup2023/tree/main">iPWS Cup 2023 GitHub repository</a> for your reference.
+    
 <p>
-	You might also find some useful information on the <a href="https://github.com/codalab/codalab-competitions/wiki#1-participants">CodaLab official document</a>.
+    You might also find some useful information on the <a
+        href="https://github.com/codalab/codalab-competitions/wiki#1-participants">CodaLab official document</a>.
 </p>
 <hr>
 <H2>FAQ</H2>
 <p>
-[Q] I tried to submit my data, but I got an error and was unable to upload my data.<br>
-[A] First, please check the <a href="https://docs.google.com/document/d/1eF8P3X60fmc0yuC14ixtLq81ORSkIe5HCy3T9I25Ha8/edit#">manual</a> to see if you are following the instruction correctly.
+    [Q1] I tried to submit my data, but I got an error and was unable to upload my data.<br>
+    [A1] First, please check the <a
+        href="https://docs.google.com/document/d/1eF8P3X60fmc0yuC14ixtLq81ORSkIe5HCy3T9I25Ha8/edit#">manual</a> to see
+    if you are following the instruction correctly.
 <ul>
     <li>Only the zipped file is accepted for submission.</li>
     <li>Files in the zip file should be laid flat; no folder is allowed.</li>
-    <li>If you are using MacOS, make sure that __MACOS folder and an extra directory are not included in the zip file. We highly recommend you use the zip command in the terminal for creating the zip file. Using the GUI feature is not recommended.</li>
-    <li>If you can't resolve the issue by yourself, contact the iPWS Cup committee secretary:<br>secretary-ipwscup2023(at)iwsec.org (replace (at) with @).</li>
+    <li>If you are using MacOS, make sure that __MACOS folder and an extra directory are not included in the zip file.
+        We highly recommend you use the zip command in the terminal for creating the zip file. Using the GUI feature is
+        not recommended.</li>
+    <li>If you can't resolve the issue by yourself, contact the iPWS Cup committee
+        secretary:<br>secretary-ipwscup2023(at)iwsec.org (replace (at) with @).</li>
 </ul>
 </p>
 <p>
-[Q] Why you are distributing multiple original health data when I can only submit one anonymized health data?<br>
-[A] To prevent unfairness in the competition.<br>
-We are using the synthetic data generated from the <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017">NHANES 2017-2018 dataset</a> for the original health data. Although we will try our best not to put any bias in the synthetic data, there is a very good chance that some synthetic data will be easier to anonymize than others. We decided to distribute multiple sets of original health data and let you decide the one to anonymize so as to mitigate the unfairness.
+    [Q2] Why you are distributing multiple original health data when I can only submit one anonymized health data?<br>
+    [A2] To prevent unfairness in the competition.<br>
+    We are using the synthetic data generated from the <a
+        href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017">NHANES 2017-2018
+        dataset</a> for the original health data. Although we will try our best not to put any bias in the synthetic
+    data, there is a very good chance that some synthetic data will be easier to anonymize than others. We decided to
+    distribute multiple sets of original health data and let you decide the one to anonymize so as to mitigate the
+    unfairness.
+</p>
+<p>
+    [Q3] Should the row index should start from 0 or 1 when I create the estimated index file at the attack phase?<br>
+    [A3] The count of the row index should start from <b>0, not 1</b>. For example, you should set 0 if you want to specify the first row of the original health data.
+</p>
+<p>
+    [Q4] Can my teammate apply his/her account to the competition?<br>
+    [A4] We allow only one account per team in the competition. This rule is set because we need to align the maximum number of allowed submissions among teams; the CodaLab only allows us to set the max limit per user account, not per team.
+</p>
+<p>
+    [Q5] We are struggling with the data submission. Are there any useful tools?<br>
+    [A5] Yes, you can find some tools in the <a href="https://github.com/kikn88/ipwscup2023/tree/main">iPWS Cup 2023 GitHub repository</a>, such as:
+    <ul>
+        <li><b>checkC.py</b>: Data format validator for anonymized health data.</li>
+        <li><b>checkE.py</b>: Data format validator for an estimated index file.</li>
+        <li><b>rlink2.py</b>: Sample re-identification script that will generate an estimated index file in the correct data format.</li>
+    </ul>
+</p>
+<p>
+    [Q6] The leaderboard shows that some teams are making more than 10 entries in the attack phase. Why is this?<br>
+    [A6] The number of entries shown in the leaderboards count both succeeded and failed submissions, so the number goes over 10 for some teams. The number of successful submissions is correctly limited to 10.
 </p>
 </p>
-
-
