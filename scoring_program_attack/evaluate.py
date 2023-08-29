@@ -13,12 +13,12 @@ submission_dir = os.path.join(input_dir, 'res')
 orig_dir = os.path.join(input_dir, 'ref')
 
 num_of_team = 10
-skip_team_id = {3} # Team(s) who did not submit their anonymized data
+skip_team_id = [] # Team(s) who did not submit their anonymized data
 
 # Read "my team id" and add it to the skip_team_id set
 with open(os.path.join(submission_dir, "my_team_id.txt")) as my_team:
     my_team_id = int(my_team.read())
-    skip_team_id.add(my_team_id)
+    skip_team_id.append(my_team_id)
 
 if not os.path.isdir(submission_dir):
     print("%s doesn't exist" % submission_dir)
